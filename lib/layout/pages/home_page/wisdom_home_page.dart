@@ -15,25 +15,31 @@ class WisdomHomePage extends StatelessWidget {
             SizedBox(
               width : double.infinity,
               height: 150,
-              child: Container(
-                color: Color.fromRGBO(244, 0, 100, 1),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {}, 
-                          child: const Text("Press1")
-                        ),
-                        ElevatedButton(
-                          onPressed: () {}, 
-                          child: const Text("Press2")
-                        ),
-                      ],
-                    ),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      //TODO fix the hell of this padding issue
+                      MaterialButton(
+                        color: const Color.fromRGBO(100, 234, 77, 1),
+                        shape: const CircleBorder(),
+                        minWidth: 50,
+                        height: 50,
+                        onPressed: () {},
+                        child: const Icon(Icons.archive, size: 30),
+                      ),
+                      MaterialButton(
+                        color: const Color.fromRGBO(100, 234, 77, 1),
+                        shape: const CircleBorder(),
+                        minWidth: 50,
+                        height: 50,
+                        onPressed: () {},
+                        child: const Icon(Icons.access_alarms, size: 30),
+                      ),
+                    ],
                   ),
                 ),
               )
