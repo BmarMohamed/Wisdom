@@ -3,7 +3,7 @@ import 'package:wisdom/layout/app_bar/magic_counter.dart';
 import 'package:wisdom/layout/app_bar/xp_counter.dart';
 
 
-PreferredSize WisdomAppBar() {
+PreferredSize WisdomAppBar(BuildContext context) {
   return PreferredSize(
     preferredSize: const Size.fromHeight(100),
     child: Container(
@@ -13,12 +13,12 @@ PreferredSize WisdomAppBar() {
           Color.fromRGBO(0, 255, 255, 1)
         ]),
       ),
-      child : const Padding(
-        padding: EdgeInsets.all(20),
+      child : Padding(
+        padding: const EdgeInsets.all(20),
         child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+          mainAxisAlignment: XpAndMagicAlignmet(context),
+          crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [
           XpCounter(),
           MagicCounter()
         ],
@@ -26,4 +26,15 @@ PreferredSize WisdomAppBar() {
       )
     ),
   );
+}
+
+//functions
+//determine Xp and Magic alignment depending on ratio of width and height
+MainAxisAlignment XpAndMagicAlignmet(BuildContext context) {
+  if(MediaQuery.sizeOf(context).height >= MediaQuery.sizeOf(context).width) {
+    return MainAxisAlignment.spaceEvenly;
+  }
+  else {
+    return MainAxisAlignment.end;
+  }
 }

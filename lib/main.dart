@@ -15,7 +15,7 @@ class App extends StatelessWidget {
     return SafeArea(
       child : MaterialApp(
           home: Scaffold(
-            appBar: WisdomAppBar(),
+            appBar: WisdomAppBar(context),
             body: const WisdomHomePage(),
             bottomNavigationBar: WisdomNavigationBar(),
           ),
