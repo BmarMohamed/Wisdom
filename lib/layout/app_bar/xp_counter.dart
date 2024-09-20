@@ -9,10 +9,19 @@ class XpCounter extends StatefulWidget {
 class _XpCounterState extends State<XpCounter> {
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
+    return SizedBox(
       width: 150,
       height: 50,
-      child: Placeholder(),
+      child: Row(
+        children: [
+          const Icon(Icons.network_cell, size: 30),
+          Container(
+            height: 30,
+            width: 100,
+            color: const Color.fromARGB(255, 71, 5, 77),
+          )
+        ],
+      ),
     );
   }
 }

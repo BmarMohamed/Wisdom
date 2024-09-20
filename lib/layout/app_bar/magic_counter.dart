@@ -9,10 +9,19 @@ class MagicCounter extends StatefulWidget {
 class _MagicCounterState extends State<MagicCounter> {
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
+    return SizedBox(
       width: 150,
       height: 50,
-      child: Placeholder(),
+      child: Row(
+        children: [
+          const Icon(Icons.computer, size: 30),
+          Container(
+            height: 30,
+            width: 100,
+            color: const Color.fromRGBO(255, 100, 0, 1),
+          )
+        ],
+      ),
     );
   }
 }
