@@ -17,7 +17,7 @@ class App extends StatelessWidget {
           home: Scaffold(
             appBar: WisdomAppBar(context),
             body: const WisdomHomePage(),
-            bottomNavigationBar: WisdomNavigationBar(),
+            bottomNavigationBar: WisdomNavigationBar(context),
           ),
           theme: ThemeData(),
         )

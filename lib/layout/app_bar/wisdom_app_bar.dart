@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:wisdom/data/global_variables.dart';
+import 'package:wisdom/data/themes.dart';
 import 'package:wisdom/layout/app_bar/magic_counter.dart';
 import 'package:wisdom/layout/app_bar/xp_counter.dart';
 
 
 PreferredSize WisdomAppBar(BuildContext context) {
   return PreferredSize(
-    preferredSize: const Size.fromHeight(100),
+    preferredSize: Size.fromHeight(window_height(context) / 13),
     child: Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(colors: [
-          Color.fromRGBO(255, 255, 255, 1),
-          Color.fromRGBO(0, 255, 255, 1)
+          WisdomTheme.Themes["wisdom"]!.first_color,
+          WisdomTheme.Themes["wisdom"]!.second_color,
         ]),
       ),
       child : Padding(
@@ -31,7 +33,7 @@ PreferredSize WisdomAppBar(BuildContext context) {
 //functions
 //determine Xp and Magic alignment depending on ratio of width and height
 MainAxisAlignment XpAndMagicAlignmet(BuildContext context) {
-  if(MediaQuery.sizeOf(context).height >= MediaQuery.sizeOf(context).width) {
+  if(window_height(context) >= window_width(context)) {
     return MainAxisAlignment.spaceEvenly;
   }
   else {
